@@ -105,7 +105,7 @@ const char* STORAGER_GETINT_METHOD_NAME = "getInt";
 const char* STORAGER_SETINT_METHOD_NAME = "setInt";
 
 // Values used for modifications
-const char* NEW_PHOTON_APP_ID = "24d95e9c-b8ba-4545-9fe1-25bf19379cca"; // Your Photon App ID
+const char* NEW_PHOTON_APP_ID = "yourappid"; // Your Photon App ID
 const int NEW_PHOTON_HOST_TYPE = 1; // 1 corresponds to ServerSettings.HostingOption.PhotonCloud
 const int NEW_PHOTON_REGION = 0;    // 0 corresponds to CloudRegionCode.eu
 const int ACCRUAL_TYPE_DEFAULT = 0; // Default accrual type for currency addition
