@@ -3,22 +3,25 @@
 buildscript {
     repositories {
         google()
-        jcenter()
-        
+        // jcenter() is deprecated, use mavenCentral() instead
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
-        
+        // Update the Android Gradle Plugin version
+        classpath 'com.android.tools.build:gradle:8.9.2' // <<< ОБНОВЛЕНО
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
 
+// Use 'plugins' block for plugin application in modern Gradle versions
+// The 'allprojects' block might still be needed for repositories depending on project structure
 allprojects {
     repositories {
         google()
-        jcenter()
-        
+        // jcenter() is deprecated, use mavenCentral() instead
+        mavenCentral()
     }
 }
 

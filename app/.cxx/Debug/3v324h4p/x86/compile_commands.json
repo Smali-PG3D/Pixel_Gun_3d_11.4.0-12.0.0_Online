@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/.cxx/Debug/3v324h4p/x86",
+  "command": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android28 --sysroot=C:/Users/1/AppData/Local/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dwolve_EXPORTS -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp/Dobby/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -std=gnu++17 -fPIC -o CMakeFiles\\wolve.dir\\main.cpp.o -c C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\main.cpp",
+  "file": "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\main.cpp",
+  "output": "CMakeFiles\\wolve.dir\\main.cpp.o"
+},
+{
+  "directory": "C:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/.cxx/Debug/3v324h4p/x86",
+  "command": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android28 --sysroot=C:/Users/1/AppData/Local/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dwolve_EXPORTS -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp/Dobby/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -std=gnu++17 -fPIC -o CMakeFiles\\wolve.dir\\Patching\\Patch.cpp.o -c C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\Patching\\Patch.cpp",
+  "file": "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\Patching\\Patch.cpp",
+  "output": "CMakeFiles\\wolve.dir\\Patching\\Patch.cpp.o"
+}
+]

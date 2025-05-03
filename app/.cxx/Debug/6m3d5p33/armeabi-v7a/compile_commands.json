@@ -1,0 +1,50 @@
+[
+{
+  "directory": "C:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/.cxx/Debug/6m3d5p33/armeabi-v7a",
+  "command": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi27 --sysroot=C:/Users/1/AppData/Local/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp/Dobby/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -std=gnu++17 -fPIC -o CMakeFiles\\native-lib.dir\\KittyMemory\\KittyArm64.cpp.o -c C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\KittyMemory\\KittyArm64.cpp",
+  "file": "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\KittyMemory\\KittyArm64.cpp",
+  "output": "CMakeFiles\\native-lib.dir\\KittyMemory\\KittyArm64.cpp.o"
+},
+{
+  "directory": "C:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/.cxx/Debug/6m3d5p33/armeabi-v7a",
+  "command": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi27 --sysroot=C:/Users/1/AppData/Local/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp/Dobby/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -std=gnu++17 -fPIC -o CMakeFiles\\native-lib.dir\\KittyMemory\\KittyMemory.cpp.o -c C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\KittyMemory\\KittyMemory.cpp",
+  "file": "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\KittyMemory\\KittyMemory.cpp",
+  "output": "CMakeFiles\\native-lib.dir\\KittyMemory\\KittyMemory.cpp.o"
+},
+{
+  "directory": "C:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/.cxx/Debug/6m3d5p33/armeabi-v7a",
+  "command": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi27 --sysroot=C:/Users/1/AppData/Local/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp/Dobby/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -std=gnu++17 -fPIC -o CMakeFiles\\native-lib.dir\\KittyMemory\\KittyScanner.cpp.o -c C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\KittyMemory\\KittyScanner.cpp",
+  "file": "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\KittyMemory\\KittyScanner.cpp",
+  "output": "CMakeFiles\\native-lib.dir\\KittyMemory\\KittyScanner.cpp.o"
+},
+{
+  "directory": "C:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/.cxx/Debug/6m3d5p33/armeabi-v7a",
+  "command": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi27 --sysroot=C:/Users/1/AppData/Local/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp/Dobby/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -std=gnu++17 -fPIC -o CMakeFiles\\native-lib.dir\\KittyMemory\\KittyUtils.cpp.o -c C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\KittyMemory\\KittyUtils.cpp",
+  "file": "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\KittyMemory\\KittyUtils.cpp",
+  "output": "CMakeFiles\\native-lib.dir\\KittyMemory\\KittyUtils.cpp.o"
+},
+{
+  "directory": "C:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/.cxx/Debug/6m3d5p33/armeabi-v7a",
+  "command": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi27 --sysroot=C:/Users/1/AppData/Local/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp/Dobby/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -std=gnu++17 -fPIC -o CMakeFiles\\native-lib.dir\\KittyMemory\\MemoryBackup.cpp.o -c C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\KittyMemory\\MemoryBackup.cpp",
+  "file": "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\KittyMemory\\MemoryBackup.cpp",
+  "output": "CMakeFiles\\native-lib.dir\\KittyMemory\\MemoryBackup.cpp.o"
+},
+{
+  "directory": "C:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/.cxx/Debug/6m3d5p33/armeabi-v7a",
+  "command": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi27 --sysroot=C:/Users/1/AppData/Local/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp/Dobby/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -std=gnu++17 -fPIC -o CMakeFiles\\native-lib.dir\\KittyMemory\\MemoryPatch.cpp.o -c C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\KittyMemory\\MemoryPatch.cpp",
+  "file": "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\KittyMemory\\MemoryPatch.cpp",
+  "output": "CMakeFiles\\native-lib.dir\\KittyMemory\\MemoryPatch.cpp.o"
+},
+{
+  "directory": "C:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/.cxx/Debug/6m3d5p33/armeabi-v7a",
+  "command": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi27 --sysroot=C:/Users/1/AppData/Local/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp/Dobby/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -std=gnu++17 -fPIC -o CMakeFiles\\native-lib.dir\\main.cpp.o -c C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\main.cpp",
+  "file": "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\main.cpp",
+  "output": "CMakeFiles\\native-lib.dir\\main.cpp.o"
+},
+{
+  "directory": "C:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/.cxx/Debug/6m3d5p33/armeabi-v7a",
+  "command": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=armv7-none-linux-androideabi27 --sysroot=C:/Users/1/AppData/Local/Android/Sdk/ndk/26.1.10909125/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp -IC:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/src/main/cpp/Dobby/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -fno-limit-debug-info  -std=gnu++17 -fPIC -o CMakeFiles\\native-lib.dir\\Patching\\Patch.cpp.o -c C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\Patching\\Patch.cpp",
+  "file": "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\Patching\\Patch.cpp",
+  "output": "CMakeFiles\\native-lib.dir\\Patching\\Patch.cpp.o"
+}
+]

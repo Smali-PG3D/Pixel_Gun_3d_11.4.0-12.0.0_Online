@@ -1,0 +1,3 @@
+C:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/.cxx/Debug/3kp1p3p1/x86/CMakeFiles/wolve.dir
+C:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/.cxx/Debug/3kp1p3p1/x86/CMakeFiles/edit_cache.dir
+C:/Users/1/StudioProjects/Hooking-Template-With-Mod-Menu/app/.cxx/Debug/3kp1p3p1/x86/CMakeFiles/rebuild_cache.dir

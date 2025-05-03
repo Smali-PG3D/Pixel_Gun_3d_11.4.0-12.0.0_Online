@@ -1,0 +1,1 @@
+C:\Users\1\StudioProjects\Hooking-Template-With-Mod-Menu\app\src\main\cpp\CMakeLists.txt

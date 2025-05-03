@@ -1,13 +1,20 @@
 cmake_minimum_required (VERSION 3.10.2)
-project(wolve)
+project(native-lib)
 
 enable_language(CXX)
 enable_language(ASM)
 
 set(SOURCE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
+set(KITTYMEMORY_PATH ${CMAKE_CURRENT_SOURCE_DIR}/KittyMemory)
+file(GLOB KITTYMEMORY_SRC ${KITTYMEMORY_PATH}/*.cpp)
+set(KEYSTONE_LIB ${KITTYMEMORY_PATH}/Deps/Keystone/libs-android/${CMAKE_ANDROID_ARCH_ABI}/libkeystone.a)
+
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS} -Wno-unused-command-line-argument -O0 -g -std=c++20 -DDEBUG")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -Wno-unused-command-line-argument -O2 -s -std=c++20 -DNDEBUG")
 
 add_library(${PROJECT_NAME}
         SHARED
+        ${KITTYMEMORY_SRC}
         )
 
 target_include_directories(${PROJECT_NAME}
@@ -19,7 +26,6 @@ target_sources(${PROJECT_NAME}
         PRIVATE
 
         main.cpp
-        Patching/Patch.cpp
         )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Dobby/include)
@@ -96,4 +102,5 @@ set(DOBBY_LIB ${CMAKE_CURRENT_SOURCE_DIR}/Dobby/${CMAKE_ANDROID_ARCH_ABI}/libdob
 target_link_libraries(${PROJECT_NAME}
         ${log-lib}
         ${DOBBY_LIB}
+        -llog ${KEYSTONE_LIB}
         )

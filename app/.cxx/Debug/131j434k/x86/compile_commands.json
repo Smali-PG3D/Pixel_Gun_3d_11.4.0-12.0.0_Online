@@ -1,0 +1,12 @@
+[
+{
+  "directory": "C:/Users/1/StudioProjects/Pixel Gun 3d 11.4.0-12.0.0 Online/app/.cxx/Debug/131j434k/x86",
+  "command": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android21 --sysroot=C:/Users/1/AppData/Local/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dwolve_EXPORTS -I\"C:/Users/1/StudioProjects/Pixel Gun 3d 11.4.0-12.0.0 Online/app/src/main/cpp\" -I\"C:/Users/1/StudioProjects/Pixel Gun 3d 11.4.0-12.0.0 Online/app/src/main/cpp/Dobby/include\" -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\wolve.dir\\main.cpp.o -c \"C:\\Users\\1\\StudioProjects\\Pixel Gun 3d 11.4.0-12.0.0 Online\\app\\src\\main\\cpp\\main.cpp\"",
+  "file": "C:\\Users\\1\\StudioProjects\\Pixel Gun 3d 11.4.0-12.0.0 Online\\app\\src\\main\\cpp\\main.cpp"
+},
+{
+  "directory": "C:/Users/1/StudioProjects/Pixel Gun 3d 11.4.0-12.0.0 Online/app/.cxx/Debug/131j434k/x86",
+  "command": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=i686-none-linux-android21 --sysroot=C:/Users/1/AppData/Local/Android/Sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dwolve_EXPORTS -I\"C:/Users/1/StudioProjects/Pixel Gun 3d 11.4.0-12.0.0 Online/app/src/main/cpp\" -I\"C:/Users/1/StudioProjects/Pixel Gun 3d 11.4.0-12.0.0 Online/app/src/main/cpp/Dobby/include\" -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\wolve.dir\\Patching\\Patch.cpp.o -c \"C:\\Users\\1\\StudioProjects\\Pixel Gun 3d 11.4.0-12.0.0 Online\\app\\src\\main\\cpp\\Patching\\Patch.cpp\"",
+  "file": "C:\\Users\\1\\StudioProjects\\Pixel Gun 3d 11.4.0-12.0.0 Online\\app\\src\\main\\cpp\\Patching\\Patch.cpp"
+}
+]

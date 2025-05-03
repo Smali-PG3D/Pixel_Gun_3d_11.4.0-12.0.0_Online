@@ -113,7 +113,7 @@ const int EXPERIENCE_TO_SET = 1000000; // Experience value to set
 const int TICKETS_TO_ADD = 999999999; // Amount of tickets to add
 const int COINS_TO_ADD = 999999999;   // Amount of coins to add
 const int GEMS_TO_ADD = 999999999;    // Amount of gems to add
-const int LEVEL_KEY_VALUE_TO_SET = 1; // Value to set for the "currentLevel36" key
+const int LEVEL_KEY_VALUE_TO_SET = 1; // Value to set for the level key
 
 // --- Logging Macro Redefinition ---
 #define LOG_TAG_CUSTOM "SMALI_HOOK"
@@ -552,18 +552,43 @@ void UIRoot_Awake_Hook(void* instance) {
                     MethodInfo* setIntMethod = il2cpp_class_get_method_from_name(storagerClass, STORAGER_SETINT_METHOD_NAME, 2);
                     if (setIntMethod) {
                         Il2CppObject* ex = nullptr;
-                        // Set Level Key
-                        const char* levelKey = "currentLevel36";
-                        int levelValue = LEVEL_KEY_VALUE_TO_SET; // Set to 1
-                        Il2CppString* levelKeyStr = CreateIl2cppString(levelKey);
-                        if (levelKeyStr) { void* args[] = {levelKeyStr, &levelValue}; ex=nullptr; il2cpp_runtime_invoke(setIntMethod, nullptr, args, &ex); if (ex) LOGE("Exception setting level key '%s'.", levelKey); }
-                        else LOGE("Failed to create string for level key '%s'.", levelKey);
-                        // Set Experience
+                        const char* levelKey = nullptr; // <<< Initialize levelKey
+
+                        // --- Determine level key based on game version ---
+                        if (g_appInfo.versionName == "11.4.0") {
+                            levelKey = "currentLevel31";
+                        } else if (g_appInfo.versionName == "12.0.0") {
+                            levelKey = "currentLevel36";
+                        } else {
+                            // Default or fallback if version is unknown or different
+                            levelKey = "currentLevel36"; // Or handle error, log warning, etc.
+                            if (log_this_time) { // Log warning only once
+                                LOGE("Unknown game version '%s' for level key, defaulting to 'currentLevel36'", g_appInfo.versionName.c_str());
+                            }
+                        }
+
+                        // Set Level Key (using the determined key)
+                        if (levelKey) { // Check if a key was determined
+                            int levelValue = LEVEL_KEY_VALUE_TO_SET; // Set to 1
+                            Il2CppString* levelKeyStr = CreateIl2cppString(levelKey);
+                            if (levelKeyStr) {
+                                void* args[] = {levelKeyStr, &levelValue};
+                                ex = nullptr;
+                                il2cpp_runtime_invoke(setIntMethod, nullptr, args, &ex);
+                                if (ex) LOGE("Exception setting level key '%s'.", levelKey);
+                            } else { LOGE("Failed to create string for level key '%s'.", levelKey); }
+                        }
+
+                        // Set Experience (remains the same)
                         const char* expKey = "currentExperience";
                         int expValue = EXPERIENCE_TO_SET;
                         Il2CppString* expKeyStr = CreateIl2cppString(expKey);
-                        if (expKeyStr) { void* args[] = {expKeyStr, &expValue}; ex=nullptr; il2cpp_runtime_invoke(setIntMethod, nullptr, args, &ex); if (ex) LOGE("Exception setting experience key '%s'.", expKey); }
-                        else LOGE("Failed to create string for experience key '%s'.", expKey);
+                        if (expKeyStr) {
+                            void* args[] = {expKeyStr, &expValue};
+                            ex = nullptr;
+                            il2cpp_runtime_invoke(setIntMethod, nullptr, args, &ex);
+                            if (ex) LOGE("Exception setting experience key '%s'.", expKey);
+                        } else { LOGE("Failed to create string for experience key '%s'.", expKey); }
                     } else { LOGE("Storager.setInt method not found (for level/exp)."); }
                 } else { LOGE("Storager class not found (for level/exp)."); }
             } // End Level/Exp block
@@ -647,8 +672,6 @@ void ApplyMemoryPatches() {
     patchHex = "1E FF 2F E1"; // BX LR (ARM Thumb)
 #elif defined(__i386__)
     patchHex = "C3"; // RET (x86)
-#elif defined(__aarch64__)
-    patchHex = "C0 03 5F D6"; // RET (ARM64)
     #else
     LOGE("Unsupported architecture for patches!"); return;
 #endif
@@ -735,9 +758,6 @@ bool PerformInitialization(JNIEnv* env) {
 #elif defined(__arm__)
         LOGDEBUG("Using offsets for v12.0.0 armeabi-v7a");
             current_offsets = std::make_unique<Offsets_12_0_0_armv7>();
-#elif defined(__aarch64__)
-        LOGDEBUG("Using offsets for v12.0.0 arm64-v8a (Assuming same as armv7)"); // TODO: Add specific arm64 offsets if different
-        current_offsets = std::make_unique<Offsets_12_0_0_armv7>();
 #else
             LOGE("Unsupported architecture for v12.0.0");
             return false;
@@ -749,9 +769,6 @@ bool PerformInitialization(JNIEnv* env) {
 #elif defined(__arm__)
         LOGDEBUG("Using offsets for v11.4.0 armeabi-v7a");
             current_offsets = std::make_unique<Offsets_11_4_0_armv7>();
-#elif defined(__aarch64__)
-        LOGDEBUG("Using offsets for v11.4.0 arm64-v8a (Assuming same as armv7)"); // TODO: Add specific arm64 offsets if different
-        current_offsets = std::make_unique<Offsets_11_4_0_armv7>();
 #else
             LOGE("Unsupported architecture for v11.4.0");
             return false;
@@ -868,7 +885,7 @@ void *hack_thread(void* vm_ptr) {
             log_file = nullptr;
         }
         // Open log file in write mode ('w') to overwrite existing content
-        log_file = fopen(log_path, "w"); // <<< CHANGED: Use "w" to overwrite the log file
+        log_file = fopen(log_path, "w"); // Use "w" to overwrite the log file
         if (!log_file) {
             __android_log_print(ANDROID_LOG_ERROR, LOG_TAG_CUSTOM, "!!! CRITICAL: Failed to open log file for writing: %s (Error: %s)", log_path, strerror(errno));
         } else {

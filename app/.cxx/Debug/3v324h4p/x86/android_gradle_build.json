@@ -1,0 +1,38 @@
+{
+  "buildFiles": [
+    "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\cmake\\3.31.6\\bin\\ninja.exe",
+      "-C",
+      "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\.cxx\\Debug\\3v324h4p\\x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\cmake\\3.31.6\\bin\\ninja.exe",
+    "-C",
+    "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\.cxx\\Debug\\3v324h4p\\x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "wolve::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "wolve",
+      "output": "C:\\Users\\1\\StudioProjects\\Hooking-Template-With-Mod-Menu\\app\\build\\intermediates\\cxx\\Debug\\3v324h4p\\obj\\x86\\libwolve.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "C:\\Users\\1\\AppData\\Local\\Android\\Sdk\\ndk\\26.1.10909125\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
