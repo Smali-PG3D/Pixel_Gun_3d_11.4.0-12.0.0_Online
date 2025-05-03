@@ -26,3 +26,9 @@ This project is a C++ modification (mod) for the Android game **Pixel Gun 3D (sp
 ## How it Works
 
 The mod runs in a background thread initiated from `JNI_OnLoad`, waits for `libil2cpp.so` to be loaded, performs initialization (offset selection, API resolution), and then applies hooks and patches.
+
+## Credits
+
+* **Template:** Based on [Octowolve/Hooking-Template-With-Mod-Menu](https://github.com/Octowolve/Hooking-Template-With-Mod-Menu)
+* **Hooking Framework:** [Dobby](https://github.com/jmpews/Dobby) by jmpews
+* **Memory Patching Library:** [KittyMemory](https://github.com/MJx0/KittyMemory) by MJx0
