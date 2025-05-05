@@ -8,7 +8,7 @@ set(SOURCE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 set(KITTYMEMORY_PATH ${CMAKE_CURRENT_SOURCE_DIR}/KittyMemory)
 file(GLOB KITTYMEMORY_SRC ${KITTYMEMORY_PATH}/*.cpp)
 set(KEYSTONE_LIB ${KITTYMEMORY_PATH}/Deps/Keystone/libs-android/${CMAKE_ANDROID_ARCH_ABI}/libkeystone.a)
-
+set(LIBRARY_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/output_libs/${ANDROID_ABI}")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS} -Wno-unused-command-line-argument -O0 -g -std=c++20 -DDEBUG")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -Wno-unused-command-line-argument -O2 -s -std=c++20 -DNDEBUG")
 
@@ -37,6 +37,12 @@ set_target_properties(${PROJECT_NAME}
         CXX_STANDARD_REQUIRED YES
         CXX_EXTENSIONS YES
         )
+
+set_target_properties(native-lib PROPERTIES
+        LIBRARY_OUTPUT_DIRECTORY "${LIBRARY_OUTPUT_PATH}"
+        ARCHIVE_OUTPUT_DIRECTORY "${LIBRARY_OUTPUT_PATH}" # Также для статических библиотек, если нужно
+)
+message(STATUS "Native library output directory: ${LIBRARY_OUTPUT_PATH}")
 
 target_compile_features(${PROJECT_NAME}
         INTERFACE
