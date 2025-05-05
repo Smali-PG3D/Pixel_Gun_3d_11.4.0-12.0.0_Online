@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/1/StudioProjects/Pixel Gun 3d 11.4.0-12.0.0 Online/app/src/main/cpp
+# Install script for directory: C:/Users/1/StudioProjects/Pixel_Gun_3d_11.4.0-12.0.0_Online/app/src/main/cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/wolve")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/native-lib")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/1/StudioProjects/Pixel Gun 3d 11.4.0-12.0.0 Online/app/.cxx/Debug/2r5c612q/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/1/StudioProjects/Pixel_Gun_3d_11.4.0-12.0.0_Online/app/.cxx/Debug/2r5c612q/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

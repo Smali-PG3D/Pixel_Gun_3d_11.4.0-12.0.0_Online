@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\1\AppData\Local\Android\Sdk\cmake\3.22.1\bin\cmake.exe --regenerate-during-build -S"C:\Users\1\StudioProjects\Pixel Gun 3d 11.4.0-12.0.0 Online\app\src\main\cpp" -B"C:\Users\1\StudioProjects\Pixel Gun 3d 11.4.0-12.0.0 Online\app\.cxx\Debug\2r5c612q\armeabi-v7a"
+  command = C:\Users\1\AppData\Local\Android\Sdk\cmake\3.22.1\bin\cmake.exe --regenerate-during-build -SC:\Users\1\StudioProjects\Pixel_Gun_3d_11.4.0-12.0.0_Online\app\src\main\cpp -BC:\Users\1\StudioProjects\Pixel_Gun_3d_11.4.0-12.0.0_Online\app\.cxx\Debug\2r5c612q\armeabi-v7a
   description = Re-running CMake...
   generator = 1
 

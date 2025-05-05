@@ -1,1 +1,1 @@
-C:\Users\1\StudioProjects\Pixel Gun 3d 11.4.0-12.0.0 Online\app\src\main\cpp\CMakeLists.txt
+C:\Users\1\StudioProjects\Pixel_Gun_3d_11.4.0-12.0.0_Online\app\src\main\cpp\CMakeLists.txt
