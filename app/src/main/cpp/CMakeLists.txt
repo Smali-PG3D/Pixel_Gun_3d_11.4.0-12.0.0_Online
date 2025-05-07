@@ -4,6 +4,7 @@ project(native-lib)
 enable_language(CXX)
 enable_language(ASM)
 
+
 set(SOURCE_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 set(KITTYMEMORY_PATH ${CMAKE_CURRENT_SOURCE_DIR}/KittyMemory)
 file(GLOB KITTYMEMORY_SRC ${KITTYMEMORY_PATH}/*.cpp)
