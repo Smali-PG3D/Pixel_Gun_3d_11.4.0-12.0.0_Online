@@ -101,10 +101,9 @@ struct BaseOffsets {
     uintptr_t updateCheat = 0; uintptr_t get_cheaterConfig = 0; uintptr_t set_cheaterConfig = 0;
     uintptr_t get_CheckSignatureTampering = 0; uintptr_t get_coinThreshold = 0; uintptr_t get_gemThreshold = 0;
     uintptr_t CleanUpAndDoAction_Start = 0; uintptr_t CleanUpAndDoAction_OnGUI = 0; uintptr_t ClosingScript_Start = 0;
-    uintptr_t AppsMenu_Start = 0; uintptr_t AppsMenu_AppsMenuAwakeCoroutine = 0; uintptr_t AppsMenu_GetAbuseKey_53232de5 = 0;
+    uintptr_t AppsMenu_Start = 0; uintptr_t AppsMenu_GetAbuseKey_53232de5 = 0;
     uintptr_t AppsMenu_GetAbuseKey_21493d18 = 0; uintptr_t AppsMenu_GetTerminalSceneName_4de1 = 0;
     uintptr_t AppsMenu_SafeGetSdkLevel = 0; uintptr_t AppsMenu_HandleNotification = 0;
-    uintptr_t AppsMenu_OnEnable = 0; uintptr_t AppsMenu_OnDisable = 0; uintptr_t AppsMenu_Awake = 0;
 };
 
 // --- Specific Offset Structures ---
@@ -114,11 +113,10 @@ struct Offsets_12_0_0_x86 : BaseOffsets {
         showClearProgress = 0xF6202B; awakeCheat = 0xF6237E; updateCheat = 0xF62680; get_cheaterConfig = 0x138443F;
         set_cheaterConfig = 0x1386BE3; get_CheckSignatureTampering = 0xCF94C0; get_coinThreshold = 0xCF94D1;
         get_gemThreshold = 0xCF94E1; CleanUpAndDoAction_Start = 0xBCAA76; CleanUpAndDoAction_OnGUI = 0xBCAB08;
-        ClosingScript_Start = 0xBCB478; AppsMenu_Start = 0x130B4E1; AppsMenu_AppsMenuAwakeCoroutine = 0x130A1D7;
+        ClosingScript_Start = 0xBCB478; AppsMenu_Start = 0x130B4E1;
         AppsMenu_GetAbuseKey_53232de5 = 0x130A344; AppsMenu_GetAbuseKey_21493d18 = 0x130A3EC;
         AppsMenu_GetTerminalSceneName_4de1 = 0x130A494; AppsMenu_SafeGetSdkLevel = 0x130C0F3;
-        AppsMenu_HandleNotification = 0x130C82C; AppsMenu_OnEnable = 0x130A552; AppsMenu_OnDisable = 0x130A71A;
-        AppsMenu_Awake = 0x130A888;
+        AppsMenu_HandleNotification = 0x130C82C;
     }
 };
 struct Offsets_12_0_0_armv7 : BaseOffsets {
@@ -127,11 +125,10 @@ struct Offsets_12_0_0_armv7 : BaseOffsets {
         showClearProgress = 0x1103228; awakeCheat = 0x1103654; updateCheat = 0x11039B4; get_cheaterConfig = 0x15ADA68;
         set_cheaterConfig = 0x15B09D4; get_CheckSignatureTampering = 0xE3F020; get_coinThreshold = 0xE3F028;
         get_gemThreshold = 0xE3F030; CleanUpAndDoAction_Start = 0xCE0B2C; CleanUpAndDoAction_OnGUI = 0xCE0BC0;
-        ClosingScript_Start = 0xCE1620; AppsMenu_Start = 0x1523BF8; AppsMenu_AppsMenuAwakeCoroutine = 0x15222BC;
+        ClosingScript_Start = 0xCE1620; AppsMenu_Start = 0x1523BF8;
         AppsMenu_GetAbuseKey_53232de5 = 0x1522438; AppsMenu_GetAbuseKey_21493d18 = 0x1522548;
         AppsMenu_GetTerminalSceneName_4de1 = 0x1522658; AppsMenu_SafeGetSdkLevel = 0x15249F4;
-        AppsMenu_HandleNotification = 0x15253B4; AppsMenu_OnEnable = 0x1522770; AppsMenu_OnDisable = 0x1522A00;
-        AppsMenu_Awake = 0x1522C00;
+        AppsMenu_HandleNotification = 0x15253B4;
     }
 };
 struct Offsets_11_4_0_x86 : BaseOffsets {
@@ -140,11 +137,10 @@ struct Offsets_11_4_0_x86 : BaseOffsets {
         showClearProgress = 0xF1C696; awakeCheat = 0xF1C9E9; updateCheat = 0xF1CD07; get_cheaterConfig = 0xF2EF53;
         set_cheaterConfig = 0xF315DA; get_CheckSignatureTampering = 0x126F0FC; get_coinThreshold = 0x126F10D;
         get_gemThreshold = 0x126F11D; CleanUpAndDoAction_Start = 0x900228; CleanUpAndDoAction_OnGUI = 0x9002BA;
-        ClosingScript_Start = 0x900C46; AppsMenu_Start = 0x125B8C9; AppsMenu_AppsMenuAwakeCoroutine = 0x125A90D;
+        ClosingScript_Start = 0x900C46; AppsMenu_Start = 0x125B8C9;
         AppsMenu_GetAbuseKey_53232de5 = 0x125AA7A; AppsMenu_GetAbuseKey_21493d18 = 0x125AB22;
         AppsMenu_GetTerminalSceneName_4de1 = 0x125ABCA; AppsMenu_SafeGetSdkLevel = 0;
-        AppsMenu_HandleNotification = 0x125C08D; AppsMenu_OnEnable = 0x125AC88; AppsMenu_OnDisable = 0x125AE50;
-        AppsMenu_Awake = 0x125AF0C;
+        AppsMenu_HandleNotification = 0x125C08D;
     }
 };
 struct Offsets_11_4_0_armv7 : BaseOffsets {
@@ -153,11 +149,10 @@ struct Offsets_11_4_0_armv7 : BaseOffsets {
         showClearProgress = 0x10B4F64; awakeCheat = 0x10B5390; updateCheat = 0x10B5714; get_cheaterConfig = 0x10CB664;
         set_cheaterConfig = 0x10CE44C; get_CheckSignatureTampering = 0x147E64C; get_coinThreshold = 0x147E654;
         get_gemThreshold = 0x147E65C; CleanUpAndDoAction_Start = 0x9D58D4; CleanUpAndDoAction_OnGUI = 0x9D5968;
-        ClosingScript_Start = 0x9D63D8; AppsMenu_Start = 0x14676B0; AppsMenu_AppsMenuAwakeCoroutine = 0x146620C;
+        ClosingScript_Start = 0x9D63D8; AppsMenu_Start = 0x14676B0;
         AppsMenu_GetAbuseKey_53232de5 = 0x1466388; AppsMenu_GetAbuseKey_21493d18 = 0x1466498;
         AppsMenu_GetTerminalSceneName_4de1 = 0x14665A8; AppsMenu_SafeGetSdkLevel = 0;
-        AppsMenu_HandleNotification = 0x14680D8; AppsMenu_OnEnable = 0x14666C0; AppsMenu_OnDisable = 0x1466950;
-        AppsMenu_Awake = 0x1466A44;
+        AppsMenu_HandleNotification = 0x14680D8;
     }
 };
 static std::unique_ptr<BaseOffsets> current_offsets = nullptr;
@@ -372,11 +367,9 @@ void ApplyMemoryPatches() {
     applyMemPatch(current_offsets->get_coinThreshold); applyMemPatch(current_offsets->get_gemThreshold);
     applyMemPatch(current_offsets->CleanUpAndDoAction_Start); applyMemPatch(current_offsets->CleanUpAndDoAction_OnGUI);
     applyMemPatch(current_offsets->ClosingScript_Start); applyMemPatch(current_offsets->AppsMenu_Start);
-    applyMemPatch(current_offsets->AppsMenu_AppsMenuAwakeCoroutine); applyMemPatch(current_offsets->AppsMenu_GetAbuseKey_53232de5);
+    applyMemPatch(current_offsets->AppsMenu_GetAbuseKey_53232de5);
     applyMemPatch(current_offsets->AppsMenu_GetAbuseKey_21493d18); applyMemPatch(current_offsets->AppsMenu_GetTerminalSceneName_4de1);
     applyMemPatch(current_offsets->AppsMenu_SafeGetSdkLevel); applyMemPatch(current_offsets->AppsMenu_HandleNotification);
-    applyMemPatch(current_offsets->AppsMenu_OnEnable); applyMemPatch(current_offsets->AppsMenu_OnDisable);
-    applyMemPatch(current_offsets->AppsMenu_Awake);
 }
 
 // --- Hook Installation Function ---
