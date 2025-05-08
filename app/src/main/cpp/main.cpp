@@ -426,7 +426,7 @@ void *hack_thread(void* vm_ptr) {
     if (!library_found) { if (attached) vm->DetachCurrentThread(); return nullptr; }
     bool init_success = PerformInitialization(env);
     if (init_success) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        std::this_thread::sleep_for(std::chrono::milliseconds(800));
         ApplyMemoryPatches(); InstallHooks();
     } else current_offsets.reset();
     if (attached) vm->DetachCurrentThread();
