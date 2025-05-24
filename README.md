@@ -53,7 +53,7 @@ There are two primary ways to build the native library:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Smali-PG3D/Pixel_Gun_3d_11.4.0-12.0.0_Online.git](https://github.com/Smali-PG3D/Pixel_Gun_3d_11.4.0-12.0.0_Online.git)
+    git clone https://github.com/Smali-PG3D/Pixel_Gun_3d_11.4.0-12.0.0_Online.git
     cd Pixel_Gun_3d_11.4.0-12.0.0_Online
     ```
 
@@ -86,7 +86,7 @@ There are two primary ways to build the native library:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Smali-PG3D/Pixel_Gun_3d_11.4.0-12.0.0_Online.git](https://github.com/Smali-PG3D/Pixel_Gun_3d_11.4.0-12.0.0_Online.git)
+    git clone https://github.com/Smali-PG3D/Pixel_Gun_3d_11.4.0-12.0.0_Online.git
     ```
 2.  **Place Dependencies:** Ensure Dobby libraries and KittyMemory headers are placed correctly within the project structure as described in Method 1, step 2. The `CMakeLists.txt` needs to be able to find them.
 3.  **Open Project in Android Studio:**
