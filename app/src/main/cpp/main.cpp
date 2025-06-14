@@ -399,7 +399,6 @@ bool PerformInitialization(JNIEnv* env) {
         current_offsets = std::make_unique<Offsets_12_2_1_x86>();
 #elif defined(__arm__)
         current_offsets = std::make_unique<Offsets_12_2_1_armv7>();
-        current_offsets = std::make_unique<Offsets_12_2_1_armv7>();
 #else
         return false;
 #endif
