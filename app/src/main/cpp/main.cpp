@@ -13,12 +13,8 @@
 #include <fstream>
 #include <sstream>
 #include <dobby.h>
-#include "KittyMemory/MemoryPatch.hpp" // Assumed available
-#include <android/log.h> // For Android Logcat (general mod logging) - Retained for potential future use, but calls are removed
-
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "ConstantConditionsOC"
-#pragma ide diagnostic ignored "ConstantFunctionResult"
+#include "KittyMemory/MemoryPatch.hpp"
+#include <android/log.h>
 
 // --- JNI Globals ---
 [[maybe_unused]] static JavaVM* g_JavaVM = nullptr;
@@ -79,7 +75,12 @@ const char* TRAINING_KEY_GETTER_METHOD_NAME = "get_TrainingCompleted_4_4_Sett";
 const char* STORAGER_CLASS_NAME = "Storager";
 const char* STORAGER_GETINT_METHOD_NAME = "getInt";
 const char* STORAGER_SETINT_METHOD_NAME = "setInt";
-const char* NEW_PHOTON_APP_ID = "your appid";
+const char* PROFILE_CONTROLLER_CLASS_NAME = "ProfileController";
+const char* GET_CURRENT_LEVEL_METHOD_NAME = "GetCurrentLevel";
+const char* UNITYENGINE_NAMESPACE = "UnityEngine";
+const char* APPLICATION_CLASS_NAME = "Application";
+const char* SET_TARGETFRAMERATE_METHOD_NAME = "set_targetFrameRate";
+const char* NEW_PHOTON_APP_ID = "50b568ed-0391-4dac-a96f-4499a72d804b";
 const int NEW_PHOTON_HOST_TYPE = 1;
 const int NEW_PHOTON_REGION = 0;
 const int ACCRUAL_TYPE_DEFAULT = 0;
@@ -87,74 +88,63 @@ const int EXPERIENCE_TO_SET = 1000000;
 const int TICKETS_TO_ADD = 999999999;
 const int COINS_TO_ADD = 999999999;
 const int GEMS_TO_ADD = 999999999;
-const int LEVEL_KEY_VALUE_TO_SET = 1;
 const int TARGET_FRAMERATE = 360;
-const char* UNITYENGINE_NAMESPACE = "UnityEngine";
-const char* APPLICATION_CLASS_NAME = "Application";
-const char* SET_TARGETFRAMERATE_METHOD_NAME = "set_targetFrameRate";
 
 // --- Base Offsets Structure ---
 struct BaseOffsets {
     virtual ~BaseOffsets() = default;
-    uintptr_t UIRoot_Awake = 0; uintptr_t CraftHack = 0; uintptr_t cheatDetectedBanner = 0;
-    uintptr_t clearProgress = 0; uintptr_t showClearProgress = 0; uintptr_t awakeCheat = 0;
-    uintptr_t updateCheat = 0; uintptr_t get_cheaterConfig = 0; uintptr_t set_cheaterConfig = 0;
-    uintptr_t get_CheckSignatureTampering = 0; uintptr_t get_coinThreshold = 0; uintptr_t get_gemThreshold = 0;
-    uintptr_t CleanUpAndDoAction_Start = 0; uintptr_t CleanUpAndDoAction_OnGUI = 0; uintptr_t ClosingScript_Start = 0;
-    uintptr_t AppsMenu_Start = 0; uintptr_t AppsMenu_GetAbuseKey_53232de5 = 0;
-    uintptr_t AppsMenu_GetAbuseKey_21493d18 = 0; uintptr_t AppsMenu_GetTerminalSceneName_4de1 = 0;
-    uintptr_t AppsMenu_SafeGetSdkLevel = 0; uintptr_t AppsMenu_HandleNotification = 0;
+    uintptr_t UIRoot_Awake = 0;
+    uintptr_t CraftHack = 0;
+    uintptr_t GetCurrentLevel = 0;
+    uintptr_t cheatDetectedBanner = 0;
+    uintptr_t clearProgress = 0;
+    uintptr_t showClearProgress = 0;
+    uintptr_t awakeCheat = 0;
+    uintptr_t updateCheat = 0;
+    uintptr_t get_cheaterConfig = 0;
+    uintptr_t set_cheaterConfig = 0;
+    uintptr_t get_CheckSignatureTampering = 0;
+    uintptr_t get_coinThreshold = 0;
+    uintptr_t get_gemThreshold = 0;
+    uintptr_t CleanUpAndDoAction_Start = 0;
+    uintptr_t CleanUpAndDoAction_OnGUI = 0;
+    uintptr_t ClosingScript_Start = 0;
+    uintptr_t AppsMenu_Start = 0;
+    uintptr_t AppsMenu_GetAbuseKey_53232de5 = 0;
+    uintptr_t AppsMenu_GetAbuseKey_21493d18 = 0;
+    uintptr_t AppsMenu_GetTerminalSceneName_4de1 = 0;
+    uintptr_t AppsMenu_SafeGetSdkLevel = 0;
+    uintptr_t AppsMenu_HandleNotification = 0;
 };
 
-// --- Specific Offset Structures ---
-struct Offsets_12_0_0_x86 : BaseOffsets {
-    Offsets_12_0_0_x86() {
-        UIRoot_Awake = 0xCBF798; CraftHack = 0xF247BC; cheatDetectedBanner = 0xF61FFC; clearProgress = 0xF620BB;
-        showClearProgress = 0xF6202B; awakeCheat = 0xF6237E; updateCheat = 0xF62680; get_cheaterConfig = 0x138443F;
-        set_cheaterConfig = 0x1386BE3; get_CheckSignatureTampering = 0xCF94C0; get_coinThreshold = 0xCF94D1;
-        get_gemThreshold = 0xCF94E1; CleanUpAndDoAction_Start = 0xBCAA76; CleanUpAndDoAction_OnGUI = 0xBCAB08;
-        ClosingScript_Start = 0xBCB478; AppsMenu_Start = 0x130B4E1;
-        AppsMenu_GetAbuseKey_53232de5 = 0x130A344; AppsMenu_GetAbuseKey_21493d18 = 0x130A3EC;
-        AppsMenu_GetTerminalSceneName_4de1 = 0x130A494; AppsMenu_SafeGetSdkLevel = 0x130C0F3;
-        AppsMenu_HandleNotification = 0x130C82C;
+// --- Specific Offset Structures for 12.1.1 ---
+struct Offsets_12_1_1_x86 : BaseOffsets {
+    Offsets_12_1_1_x86() { //craft hack not working in this version
+        UIRoot_Awake = 0xDBE3AB; CraftHack = 0; cheatDetectedBanner = 0xF39D87; clearProgress = 0xF39E46;
+        showClearProgress = 0xF39DB6; awakeCheat = 0xF3A109; updateCheat = 0xF3A40B; get_cheaterConfig = 0xD3AB2B;
+        set_cheaterConfig = 0xD3D2E9; get_CheckSignatureTampering = 0xD3AB3B; get_coinThreshold = 0xD3AB4C;
+        get_gemThreshold = 0xD3AB5C; CleanUpAndDoAction_Start = 0xCC7C6F; CleanUpAndDoAction_OnGUI = 0xCC7D01;
+        ClosingScript_Start = 0xCC8671; AppsMenu_Start = 0x13227F8;
+        AppsMenu_GetAbuseKey_53232de5 = 0x1320A73; AppsMenu_GetAbuseKey_21493d18 = 0x1320B1B;
+        AppsMenu_GetTerminalSceneName_4de1 = 0x1320BC3; AppsMenu_SafeGetSdkLevel = 0x132340A;
+        AppsMenu_HandleNotification = 0x1323B43;
     }
 };
-struct Offsets_12_0_0_armv7 : BaseOffsets {
-    Offsets_12_0_0_armv7() {
-        UIRoot_Awake = 0xDFBA60; CraftHack = 0x10BE904; cheatDetectedBanner = 0x1103220; clearProgress = 0x11032F0;
-        showClearProgress = 0x1103228; awakeCheat = 0x1103654; updateCheat = 0x11039B4; get_cheaterConfig = 0x15ADA68;
-        set_cheaterConfig = 0x15B09D4; get_CheckSignatureTampering = 0xE3F020; get_coinThreshold = 0xE3F028;
-        get_gemThreshold = 0xE3F030; CleanUpAndDoAction_Start = 0xCE0B2C; CleanUpAndDoAction_OnGUI = 0xCE0BC0;
-        ClosingScript_Start = 0xCE1620; AppsMenu_Start = 0x1523BF8;
-        AppsMenu_GetAbuseKey_53232de5 = 0x1522438; AppsMenu_GetAbuseKey_21493d18 = 0x1522548;
-        AppsMenu_GetTerminalSceneName_4de1 = 0x1522658; AppsMenu_SafeGetSdkLevel = 0x15249F4;
-        AppsMenu_HandleNotification = 0x15253B4;
+
+struct Offsets_12_1_1_armv7 : BaseOffsets {
+    Offsets_12_1_1_armv7() { //craft hack not working in this version
+        UIRoot_Awake = 0xF0BBE0; CraftHack = 0; cheatDetectedBanner = 0x10C3110; clearProgress = 0x10C31E0;
+        showClearProgress = 0x10C3118; awakeCheat = 0x10C3544; updateCheat = 0x10C38A4; get_cheaterConfig = 0xE75C40;
+        set_cheaterConfig = 0xE78B68; get_CheckSignatureTampering = 0xE75C48; get_coinThreshold = 0xE75C50;
+        get_gemThreshold = 0xE75C58; CleanUpAndDoAction_Start = 0xDEE7AC; CleanUpAndDoAction_OnGUI = 0xDEE840;
+        ClosingScript_Start = 0xDEF2A0; AppsMenu_Start = 0x1536F80;
+        AppsMenu_GetAbuseKey_53232de5 = 0x15347B4; AppsMenu_GetAbuseKey_21493d18 = 0x15348C4;
+        AppsMenu_GetTerminalSceneName_4de1 = 0x15349D4; AppsMenu_SafeGetSdkLevel = 0x1537D7C;
+        AppsMenu_HandleNotification = 0x153873C;
+        GetCurrentLevel = 0x123B844;
     }
 };
-struct Offsets_11_4_0_x86 : BaseOffsets {
-    Offsets_11_4_0_x86() {
-        UIRoot_Awake = 0xBBA111; CraftHack = 0; cheatDetectedBanner = 0xF1C667; clearProgress = 0xF1C726;
-        showClearProgress = 0xF1C696; awakeCheat = 0xF1C9E9; updateCheat = 0xF1CD07; get_cheaterConfig = 0xF2EF53;
-        set_cheaterConfig = 0xF315DA; get_CheckSignatureTampering = 0x126F0FC; get_coinThreshold = 0x126F10D;
-        get_gemThreshold = 0x126F11D; CleanUpAndDoAction_Start = 0x900228; CleanUpAndDoAction_OnGUI = 0x9002BA;
-        ClosingScript_Start = 0x900C46; AppsMenu_Start = 0x125B8C9;
-        AppsMenu_GetAbuseKey_53232de5 = 0x125AA7A; AppsMenu_GetAbuseKey_21493d18 = 0x125AB22;
-        AppsMenu_GetTerminalSceneName_4de1 = 0x125ABCA; AppsMenu_SafeGetSdkLevel = 0;
-        AppsMenu_HandleNotification = 0x125C08D;
-    }
-};
-struct Offsets_11_4_0_armv7 : BaseOffsets {
-    Offsets_11_4_0_armv7() {
-        UIRoot_Awake = 0xCD1A08; CraftHack = 0; cheatDetectedBanner = 0x10B4F5C; clearProgress = 0x10B502C;
-        showClearProgress = 0x10B4F64; awakeCheat = 0x10B5390; updateCheat = 0x10B5714; get_cheaterConfig = 0x10CB664;
-        set_cheaterConfig = 0x10CE44C; get_CheckSignatureTampering = 0x147E64C; get_coinThreshold = 0x147E654;
-        get_gemThreshold = 0x147E65C; CleanUpAndDoAction_Start = 0x9D58D4; CleanUpAndDoAction_OnGUI = 0x9D5968;
-        ClosingScript_Start = 0x9D63D8; AppsMenu_Start = 0x14676B0;
-        AppsMenu_GetAbuseKey_53232de5 = 0x1466388; AppsMenu_GetAbuseKey_21493d18 = 0x1466498;
-        AppsMenu_GetTerminalSceneName_4de1 = 0x14665A8; AppsMenu_SafeGetSdkLevel = 0;
-        AppsMenu_HandleNotification = 0x14680D8;
-    }
-};
+
 static std::unique_ptr<BaseOffsets> current_offsets = nullptr;
 
 // --- Utility Functions ---
@@ -163,7 +153,6 @@ inline Il2CppString* CreateIl2cppString(const char* str) {
     return il2cpp_string_new(str);
 }
 
-// Used for currency flag
 std::string get_files_dir() {
     const std::string& packageNameToUse = g_appInfo.success && !g_appInfo.packageName.empty() ? g_appInfo.packageName : FALLBACK_APP_PACKAGE_NAME;
     return "/data/data/" + packageNameToUse + "/files";
@@ -181,6 +170,7 @@ uintptr_t findLibraryBaseAddress(const char* libraryName) {
 }
 
 // --- JNI Helper: Get App Version and Package Name ---
+//ignore this error
 AppInfo get_app_info(JNIEnv* env) {
     AppInfo result; if (!env) return result;
     jclass appGlobalsClass = env->FindClass("android/app/AppGlobals"); jobject application = nullptr;
@@ -248,6 +238,12 @@ bool resolve_il2cpp_api() {
     return success;
 }
 
+// --- Hook for GetCurrentLevel ---
+int (*Original_GetCurrentLevel)() = nullptr;
+int GetCurrentLevel_Hook() {
+    return 36;
+}
+
 // --- Hook for UIRoot.Awake ---
 void (*Original_UIRoot_Awake)(void* instance) = nullptr;
 void UIRoot_Awake_Hook(void* instance) {
@@ -257,6 +253,7 @@ void UIRoot_Awake_Hook(void* instance) {
         !il2cpp_class_from_name || !il2cpp_class_get_method_from_name || !il2cpp_runtime_invoke ||
         !il2cpp_string_new || !il2cpp_class_get_field_from_name || !il2cpp_field_set_value ||
         !il2cpp_field_static_get_value || !il2cpp_object_unbox) return;
+
     Il2CppDomain* domain = il2cpp_domain_get(); if (!domain) return;
     Il2CppAssembly* mainAssembly = il2cpp_domain_assembly_open(domain, TARGET_ASSEMBLY_NAME);
     Il2CppAssembly* firstpassAssembly = il2cpp_domain_assembly_open(domain, FIRSTPASS_ASSEMBLY_NAME);
@@ -266,6 +263,7 @@ void UIRoot_Awake_Hook(void* instance) {
     const Il2CppImage* unityImage = unityAssembly ? il2cpp_assembly_get_image(unityAssembly) : nullptr;
     if (!mainImage || !firstpassImage || !unityImage) return;
 
+    // Photon Network Modification
     Il2CppClass* photonNetworkClass = il2cpp_class_from_name((Il2CppImage*)mainImage, PHOTON_NAMESPACE, PHOTON_CLASS_NAME);
     Il2CppClass* serverSettingsClass = il2cpp_class_from_name((Il2CppImage*)mainImage, PHOTON_NAMESPACE, SERVER_SETTINGS_CLASS_NAME);
     if (photonNetworkClass && serverSettingsClass) {
@@ -282,7 +280,9 @@ void UIRoot_Awake_Hook(void* instance) {
             }
         }
     }
+
     if (!one_time_actions_done) {
+        // Currency Addition (one-time)
         std::string files_dir_for_flag = get_files_dir(); std::string flag_path_curr = files_dir_for_flag + "/currency_added.flag";
         FILE* flag_file_curr = fopen(flag_path_curr.c_str(), "r");
         if (flag_file_curr) fclose(flag_file_curr);
@@ -301,16 +301,19 @@ void UIRoot_Awake_Hook(void* instance) {
             }
         }
     }
+
+    // Player Stat Modification (Experience)
     Il2CppClass* storagerClass = il2cpp_class_from_name((Il2CppImage*)mainImage, "", STORAGER_CLASS_NAME);
     if (storagerClass) {
         MethodInfo* setIntMethod = il2cpp_class_get_method_from_name(storagerClass, STORAGER_SETINT_METHOD_NAME, 2);
         if (setIntMethod) {
-            Il2CppObject* ex = nullptr; const char* levelKey = (g_appInfo.versionName == "11.4.0") ? "currentLevel31" : "currentLevel36";
-            if (levelKey) { int levelValue = LEVEL_KEY_VALUE_TO_SET; Il2CppString* levelKeyStr = CreateIl2cppString(levelKey); if (levelKeyStr) { void* args[] = {levelKeyStr, &levelValue}; ex = nullptr; il2cpp_runtime_invoke(setIntMethod, nullptr, args, &ex); } }
+            Il2CppObject* ex = nullptr;
             const char* expKey = "currentExperience"; int expValue = EXPERIENCE_TO_SET; Il2CppString* expKeyStr = CreateIl2cppString(expKey);
             if (expKeyStr) { void* args[] = {expKeyStr, &expValue}; ex = nullptr; il2cpp_runtime_invoke(setIntMethod, nullptr, args, &ex); }
         }
     }
+
+    // Training Completion Bypass (one-time)
     if (!one_time_actions_done && storagerClass) {
         Il2CppString* trainingKeyStr = nullptr;
         Il2CppClass* defsClass = il2cpp_class_from_name((Il2CppImage*)firstpassImage, "", DEFS_CLASS_NAME);
@@ -319,9 +322,11 @@ void UIRoot_Awake_Hook(void* instance) {
             if (getKeyMethod) { Il2CppObject* keyRes=nullptr; Il2CppObject* getKeyEx=nullptr; keyRes=il2cpp_runtime_invoke(getKeyMethod, nullptr, nullptr, &getKeyEx); if(!getKeyEx && keyRes) trainingKeyStr=(Il2CppString*)keyRes; }
         }
         if (trainingKeyStr) {
-            MethodInfo* getIntMethod = il2cpp_class_get_method_from_name(storagerClass, STORAGER_GETINT_METHOD_NAME, 1);
+            MethodInfo* getIntMethod = il2cpp_class_get_method_from_name(storagerClass, STORAGER_GETINT_METHOD_NAME, 2); // For 12.1.1, getInt takes 2 arguments
             if (getIntMethod) {
-                void* getArgs[] = {trainingKeyStr}; Il2CppObject* getRes=nullptr; Il2CppObject* getEx=nullptr; getRes=il2cpp_runtime_invoke(getIntMethod, nullptr, getArgs, &getEx);
+                bool suppressWarnings = false;
+                void* getArgs[] = {trainingKeyStr, &suppressWarnings};
+                Il2CppObject* getRes=nullptr; Il2CppObject* getEx=nullptr; getRes=il2cpp_runtime_invoke(getIntMethod, nullptr, getArgs, &getEx);
                 if (!getEx && getRes && il2cpp_object_unbox) {
                     int currentVal = *(static_cast<int*>(il2cpp_object_unbox(getRes)));
                     if (currentVal == 0) {
@@ -332,6 +337,8 @@ void UIRoot_Awake_Hook(void* instance) {
             }
         }
     }
+
+    // Uncap FPS
     Il2CppClass* appClass = il2cpp_class_from_name((Il2CppImage*)unityImage, UNITYENGINE_NAMESPACE, APPLICATION_CLASS_NAME);
     if (appClass) {
         MethodInfo* setTargetFrameRateMethod = il2cpp_class_get_method_from_name(appClass, SET_TARGETFRAMERATE_METHOD_NAME, 1);
@@ -383,28 +390,23 @@ void InstallHooks() {
     };
     installHook(current_offsets->UIRoot_Awake, (void*)UIRoot_Awake_Hook, (void**)&Original_UIRoot_Awake);
     installHook(current_offsets->CraftHack, (void*)CraftHack_Hook, (void**)&Original_LobbyItem_get_IsExists);
+    installHook(current_offsets->GetCurrentLevel, (void*)GetCurrentLevel_Hook, (void**)&Original_GetCurrentLevel);
 }
 
 // --- Core Initialization Function ---
 bool PerformInitialization(JNIEnv* env) {
     g_appInfo = get_app_info(env);
-    if (g_appInfo.versionName == "12.0.0") {
+    if (g_appInfo.versionName == "12.1.1") {
 #if defined(__i386__)
-        current_offsets = std::make_unique<Offsets_12_0_0_x86>();
+        current_offsets = std::make_unique<Offsets_12_1_1_x86>();
 #elif defined(__arm__)
-        current_offsets = std::make_unique<Offsets_12_0_0_armv7>();
+        current_offsets = std::make_unique<Offsets_12_1_1_armv7>();
 #else
         return false;
 #endif
-    } else if (g_appInfo.versionName == "11.4.0") {
-#if defined(__i386__)
-        current_offsets = std::make_unique<Offsets_11_4_0_x86>();
-#elif defined(__arm__)
-        current_offsets = std::make_unique<Offsets_11_4_0_armv7>();
-#else
+    } else {
         return false;
-#endif
-    } else return false;
+    }
     if (!current_offsets) return false;
     if (il2cpp_base == 0) { il2cpp_base = findLibraryBaseAddress(IL2CPP_SO_NAME); if (il2cpp_base == 0) { current_offsets.reset(); return false; } }
     if (!il2cpp_domain_get) { if (!resolve_il2cpp_api()) { current_offsets.reset(); il2cpp_base = 0; return false; } }
@@ -441,4 +443,3 @@ extern "C" JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, [[maybe_unused]] void* 
     if (pthread_create(&ptid, nullptr, hack_thread, (void*)vm) == 0) pthread_detach(ptid);
     return JNI_VERSION_1_6;
 }
-#pragma clang diagnostic pop
