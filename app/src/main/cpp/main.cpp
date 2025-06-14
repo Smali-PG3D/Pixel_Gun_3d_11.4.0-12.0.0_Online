@@ -115,31 +115,31 @@ struct BaseOffsets {
     uintptr_t AppsMenu_HandleNotification = 0;
 };
 
-// --- Specific Offset Structures for 12.1.1 ---
-struct Offsets_12_1_1_x86 : BaseOffsets {
-    Offsets_12_1_1_x86() { //craft hack not working in this version
-        UIRoot_Awake = 0xDBE3AB; CraftHack = 0; cheatDetectedBanner = 0xF39D87; clearProgress = 0xF39E46;
-        showClearProgress = 0xF39DB6; awakeCheat = 0xF3A109; updateCheat = 0xF3A40B; get_cheaterConfig = 0xD3AB2B;
-        set_cheaterConfig = 0xD3D2E9; get_CheckSignatureTampering = 0xD3AB3B; get_coinThreshold = 0xD3AB4C;
-        get_gemThreshold = 0xD3AB5C; CleanUpAndDoAction_Start = 0xCC7C6F; CleanUpAndDoAction_OnGUI = 0xCC7D01;
-        ClosingScript_Start = 0xCC8671; AppsMenu_Start = 0x13227F8;
-        AppsMenu_GetAbuseKey_53232de5 = 0x1320A73; AppsMenu_GetAbuseKey_21493d18 = 0x1320B1B;
-        AppsMenu_GetTerminalSceneName_4de1 = 0x1320BC3; AppsMenu_SafeGetSdkLevel = 0x132340A;
-        AppsMenu_HandleNotification = 0x1323B43;
+// --- Specific Offset Structures for 12.2.1 ---
+struct Offsets_12_2_1_x86 : BaseOffsets {
+    Offsets_12_2_1_x86() { //craft hack not working in this version
+        UIRoot_Awake = 0xCC7B97; CraftHack = 0; cheatDetectedBanner = 0xDE7657; clearProgress = 0xDE7716;
+        showClearProgress = 0xDE7686; awakeCheat = 0xDE79D9; updateCheat = 0xDE7CDB; get_cheaterConfig = 0xE6D9FA;
+        set_cheaterConfig = 0xE70149; get_CheckSignatureTampering = 0xF58B99; get_coinThreshold = 0xF58BAA;
+        get_gemThreshold = 0xF58BBA; CleanUpAndDoAction_Start = 0xE0C6AA; CleanUpAndDoAction_OnGUI = 0xE0C73C;
+        ClosingScript_Start = 0xE0D0AC; AppsMenu_Start = 0x13C191A;
+        AppsMenu_GetAbuseKey_53232de5 = 0x13BF93A; AppsMenu_GetAbuseKey_21493d18 = 0x13BF9E2;
+        AppsMenu_GetTerminalSceneName_4de1 = 0x13BFA8A; AppsMenu_SafeGetSdkLevel = 0x13C252C;
+        AppsMenu_HandleNotification = 0x13C2C65;
     }
 };
 
-struct Offsets_12_1_1_armv7 : BaseOffsets {
-    Offsets_12_1_1_armv7() { //craft hack not working in this version
-        UIRoot_Awake = 0xF0BBE0; CraftHack = 0; cheatDetectedBanner = 0x10C3110; clearProgress = 0x10C31E0;
-        showClearProgress = 0x10C3118; awakeCheat = 0x10C3544; updateCheat = 0x10C38A4; get_cheaterConfig = 0xE75C40;
-        set_cheaterConfig = 0xE78B68; get_CheckSignatureTampering = 0xE75C48; get_coinThreshold = 0xE75C50;
-        get_gemThreshold = 0xE75C58; CleanUpAndDoAction_Start = 0xDEE7AC; CleanUpAndDoAction_OnGUI = 0xDEE840;
-        ClosingScript_Start = 0xDEF2A0; AppsMenu_Start = 0x1536F80;
-        AppsMenu_GetAbuseKey_53232de5 = 0x15347B4; AppsMenu_GetAbuseKey_21493d18 = 0x15348C4;
-        AppsMenu_GetTerminalSceneName_4de1 = 0x15349D4; AppsMenu_SafeGetSdkLevel = 0x1537D7C;
-        AppsMenu_HandleNotification = 0x153873C;
-        GetCurrentLevel = 0x123B844;
+struct Offsets_12_2_1_armv7 : BaseOffsets {
+    Offsets_12_2_1_armv7() { //craft hack not working in this version
+        UIRoot_Awake = 0xDE9CAC; CraftHack = 0; cheatDetectedBanner = 0xF22A7C; clearProgress = 0xF22B4C;
+        showClearProgress = 0xF22A84; awakeCheat = 0xF22EB0; updateCheat = 0xF23210; get_cheaterConfig = 0x10DBEDC;
+        set_cheaterConfig = 0xFCAD78; get_CheckSignatureTampering = 0x10DBED4; get_coinThreshold = 0xE75C50;
+        get_gemThreshold = 0x10DBEE4; CleanUpAndDoAction_Start = 0xF4F62C; CleanUpAndDoAction_OnGUI = 0xF4F6C0;
+        ClosingScript_Start = 0xF50120; AppsMenu_Start = 0x15F7BBC;
+        AppsMenu_GetAbuseKey_53232de5 = 0x15F50B0; AppsMenu_GetAbuseKey_21493d18 = 0x15F51C0;
+        AppsMenu_GetTerminalSceneName_4de1 = 0x15F52D0; AppsMenu_SafeGetSdkLevel = 0x15F89B8;
+        AppsMenu_HandleNotification = 0x15F9378;
+        GetCurrentLevel = 0x14D7390;
     }
 };
 
@@ -394,11 +394,12 @@ void InstallHooks() {
 // --- Core Initialization Function ---
 bool PerformInitialization(JNIEnv* env) {
     g_appInfo = get_app_info(env);
-    if (g_appInfo.versionName == "12.1.1") {
+    if (g_appInfo.versionName == "12.2.1") {
 #if defined(__i386__)
-        current_offsets = std::make_unique<Offsets_12_1_1_x86>();
+        current_offsets = std::make_unique<Offsets_12_2_1_x86>();
 #elif defined(__arm__)
-        current_offsets = std::make_unique<Offsets_12_1_1_armv7>();
+        current_offsets = std::make_unique<Offsets_12_2_1_armv7>();
+        current_offsets = std::make_unique<Offsets_12_2_1_armv7>();
 #else
         return false;
 #endif
