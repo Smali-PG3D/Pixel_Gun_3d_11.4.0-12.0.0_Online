@@ -1,4 +1,4 @@
-# C++ IL2CPP Mod for Pixel Gun 3D (v12.1.1)
+# C++ IL2CPP Mod for Pixel Gun 3D (v12.2.1)
 
 This project is a C++ modification (mod) for the Android game **Pixel Gun 3D** (specifically targeting versions **11.4.0** and **12.0.0**), which is built with Unity and uses the IL2CPP runtime. The primary goals of this mod are to **enable online functionality** (potentially on custom servers), **bypass anti-cheat measures**, **grant in-game currency**, **set player level/experience**, and **unlock the frame rate.** It leverages several techniques to alter game behavior.
 
