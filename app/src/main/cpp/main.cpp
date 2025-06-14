@@ -50,7 +50,7 @@ static void (*il2cpp_field_set_value)(Il2CppObject* obj, FieldInfo* field, void*
 static void* (*il2cpp_object_unbox)(Il2CppObject* obj) = nullptr;
 
 // --- Global Variables ---
-const char* FALLBACK_APP_PACKAGE_NAME = "com.pg12a.gun3d";
+const char* FALLBACK_APP_PACKAGE_NAME = "com.pg12b.gun3d";
 const char* IL2CPP_SO_NAME = "libil2cpp.so";
 const char* TARGET_ASSEMBLY_NAME = "Assembly-CSharp.dll";
 const char* FIRSTPASS_ASSEMBLY_NAME = "Assembly-CSharp-firstpass.dll";
@@ -75,12 +75,10 @@ const char* TRAINING_KEY_GETTER_METHOD_NAME = "get_TrainingCompleted_4_4_Sett";
 const char* STORAGER_CLASS_NAME = "Storager";
 const char* STORAGER_GETINT_METHOD_NAME = "getInt";
 const char* STORAGER_SETINT_METHOD_NAME = "setInt";
-const char* PROFILE_CONTROLLER_CLASS_NAME = "ProfileController";
-const char* GET_CURRENT_LEVEL_METHOD_NAME = "GetCurrentLevel";
 const char* UNITYENGINE_NAMESPACE = "UnityEngine";
 const char* APPLICATION_CLASS_NAME = "Application";
 const char* SET_TARGETFRAMERATE_METHOD_NAME = "set_targetFrameRate";
-const char* NEW_PHOTON_APP_ID = "your appid";
+const char* NEW_PHOTON_APP_ID = "0b02279f-b3fe-404d-9733-2dab453e66ad";
 const int NEW_PHOTON_HOST_TYPE = 1;
 const int NEW_PHOTON_REGION = 0;
 const int ACCRUAL_TYPE_DEFAULT = 0;
